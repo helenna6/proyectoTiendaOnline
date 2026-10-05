@@ -4,12 +4,12 @@
         private $order_id;
         private $product_id;
         private $quantity;
-        private $unit_price;
+        private $price;
 
-        public function __construct($order_item_id, $order_id, $product_id, $quantity, $unit_price){
+        public function __construct($order_item_id, $order_id, $product_id, $quantity, $price){
             $this->order_item_id = $order_item_id;
-            $this->order_id = $order_id;
-            $this->product_id = $product_id;
+            $this->order_id = OrderRepository::getOrderById($order_id);
+            $this->product_id = ProductRepository::getProductById($product_id);
             $this->quantity = $quantity;
             $this->unit_price = $unit_price;
         }
