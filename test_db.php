@@ -5,7 +5,12 @@ $user = 'usuario';
 $pass = 'usuario';
 $db   = 'tienda_online';
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli(
+    'localhost',
+    'usuario',
+    'usuario',
+    'tienda_online'
+);
 
 if ($conn->connect_error) {
     die("❌ Error de conexión: " . $conn->connect_error);
